@@ -8,10 +8,10 @@ const pokemonReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECIEVE_ALL_POKEMON:
-      nextState = selectAllPokemon(state)      
-      // Object.values(action.pokemon).forEach( pokemon => {
-      //   nextState[pokemon.id] = pokemon;
-      // });
+      // nextState = selectAllPokemon(state)      
+      Object.values(action.pokemon).forEach( pokemon => {
+        nextState[pokemon.id] = pokemon;
+      });
       return nextState;
     default:
       return state;
